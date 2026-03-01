@@ -1,25 +1,35 @@
+"use client";
+
+import { useEffect } from "react";
+
 export default function Home() {
   const whatsappLink = "https://wa.me/5511999999999?text=Olá Filipe, quero saber mais sobre o Panda Hub Delivery!";
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-up').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main>
-      <header className="hero" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1658282687028-09f5b0b5b3ad?auto=format&fit=crop&q=80&w=2000')" }}>
+      <header className="hero" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1697206165469-9227e6e3aa0a?auto=format\u0026fit=crop\u0026q=80\u0026w=2000')" }}>
         <div className="container">
           <div className="hero-content">
-            <span style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--primary)', textTransform: 'uppercase', letterSpacing: '0.2em' }}>O futuro do delivery</span>
-            <h1 style={{ marginTop: '1rem' }}>
-              Atendimento é a sua <br />
-              <span className="drama-text" style={{ fontSize: '6rem', color: 'var(--primary)', lineHeight: 0.9 }}>Vantagem.</span>
+            <h1 className="animate-up">
+              <span className="hero-part1" style={{fontSize: '2.2rem', fontWeight: 700, display: 'block'}}>Independência Digital encontra</span>
+              <span className="drama-text" style={{fontSize: '7rem', display: 'block', lineHeight: 0.9, color: 'var(--accent)'}}>Sua Precisão.</span>
             </h1>
-            <p style={{ margin: '2.5rem 0', maxWidth: '600px', fontSize: '1.2rem', opacity: 0.9 }}>
-              Liberte seu restaurante da dependência do iFood. Atendimento 100% automatizado por IA no WhatsApp que vende e finaliza pedidos para você.
+            <p className="animate-up" style={{ margin: '2.5rem 0', maxWidth: '650px', fontSize: '1.25rem', opacity: 0.8 }}>
+              Desenvolvemos tecnologia de elite para restauradores que buscam autonomia. Cardápio digital integrado à IA de atendimento via WhatsApp.
             </p>
-            <div style={{ display: 'flex', gap: '1.5rem' }}>
+            <div className="animate-up">
               <a href={whatsappLink} target="_blank" className="btn btn-primary">
-                Assinar Plataforma
-              </a>
-              <a href="#servicos" className="btn btn-outline">
-                Conhecer IA
+                Assinar a plataforma
               </a>
             </div>
           </div>
@@ -28,87 +38,136 @@ export default function Home() {
 
       <section id="servicos" className="section">
         <div className="container">
-          <div style={{ marginBottom: '5rem' }}>
-            <span className="mono-text" style={{ color: 'var(--primary)' }}>01 / SOLUÇÕES</span>
-            <h2 style={{ fontSize: '3rem', marginTop: '1rem' }}>Sua operação no <span style={{ color: 'var(--primary)' }}>Automático.</span></h2>
+          <div style={{ marginBottom: '6rem' }}>
+            <span className="mono-text" style={{ color: 'var(--accent)' }}>01 / ECOSSISTEMA</span>
+            <h2 className="drama-text" style={{ fontSize: '4.5rem', marginTop: '1rem' }}>Sua Máquina de Vendas.</h2>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
-            <div className="glass-panel">
-              <h3 style={{ color: 'var(--primary)' }}>Cardápio Digital</h3>
-              <p style={{ marginTop: '1rem' }}>Interface premium ultra-rápida. Planos Prata, Gold e Platinum para cada estágio do seu negócio.</p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
+            <div className="card animate-up">
+              <span className="mono-text">Solução</span>
+              <h3 style={{ margin: '1.5rem 0', fontSize: '1.8rem' }}>Cardápio Digital</h3>
+              <p style={{ opacity: 0.7 }}>Catálogo online responsivo com carrinho, pagamentos Pix e gestão completa de pedidos em tempo real.</p>
             </div>
-            <div className="glass-panel">
-              <h3 style={{ color: 'var(--primary)' }}>IA no WhatsApp</h3>
-              <p style={{ marginTop: '1rem' }}>Um atendente virtual que nunca dorme, tira dúvidas e fecha pedidos sem intervenção humana.</p>
+            <div className="card animate-up">
+              <span className="mono-text">Inteligência</span>
+              <h3 style={{ margin: '1.5rem 0', fontSize: '1.8rem' }}>IA no WhatsApp</h3>
+              <p style={{ opacity: 0.7 }}>Automatize 100% do atendimento. Nossa IA entende o cliente, tira dúvidas e finaliza a venda sozinha.</p>
             </div>
-            <div className="glass-panel">
-              <h3 style={{ color: 'var(--primary)' }}>Ecossistema Completo</h3>
-              <p style={{ marginTop: '1rem' }}>ERP, Pagamentos Integrados, CRM & LTV e até Programa de Afiliados para escalar seu alcance.</p>
+            <div className="card animate-up">
+              <span className="mono-text">Gestão</span>
+              <h3 style={{ margin: '1.5rem 0', fontSize: '1.8rem' }}>ERP & Fidelização</h3>
+              <p style={{ opacity: 0.7 }}>Painel completo com CRM, LTV, indicadores financeiros e programa de fidelidade para seu cliente voltar sempre.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="diferenciais" className="section section-dark">
-        <div className="container" style={{ textAlign: 'center' }}>
-          <p style={{ opacity: 0.5, marginBottom: '2rem' }}>A maioria do setor foca em: apenas listar produtos.</p>
-          <h2 className="drama-text" style={{ fontSize: '5rem' }}>
-            Nós focamos em: <span style={{ color: 'var(--primary)' }}>Inteligência e Facilidade.</span>
-          </h2>
-          <p style={{ marginTop: '3rem', maxWidth: '800px', margin: '3rem auto 0', fontSize: '1.1rem' }}>
-            Nossa plataforma otimiza o atendimento, facilita a gestão e oferece o melhor design de cardápio do mercado. Tudo para você vender mais.
-          </p>
-        </div>
-      </section>
-
-      <section className="section">
+      <section id="planos" className="section section-alt">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px' }}>
-            {[
-              { t: "IA Avançada", d: "Atendimento fluido que entende o contexto e finaliza a compra sozinho." },
-              { t: "Suporte Premium", d: "Time de especialistas prontos para garantir que sua operação nunca pare." },
-              { t: "Design que Vende", d: "Cardápios pensados para aumentar o ticket médio através da experiência visual." }
-            ].map((item, i) => (
-              <div key={i} style={{ borderLeft: '2px solid var(--primary)', paddingLeft: '30px' }}>
-                <h3>{item.t}</h3>
-                <p style={{ fontSize: '0.95rem' }}>{item.d}</p>
-              </div>
-            ))}
+          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+            <h2 className="drama-text" style={{ fontSize: '4.5rem' }}>Planos Estratégicos.</h2>
+            <p style={{ fontSize: '1.2rem', opacity: 0.6 }}>Escolha a escala ideal para o seu restaurante.</p>
+          </div>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            <div className="card animate-up" style={{ borderTop: '4px solid #C0C0C0' }}>
+              <span className="mono-text" style={{ color: '#C0C0C0' }}>PLANO PRATA</span>
+              <h4 style={{ fontSize: '2.5rem', margin: '1.5rem 0' }}>R$ 49,90<span style={{ fontSize: '1rem', opacity: 0.5 }}>/mês</span></h4>
+              <ul style={{ listStyle: 'none', opacity: 0.8, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <li>✓ Até 50 produtos</li>
+                <li>✓ 100 pedidos /mês</li>
+                <li>✓ Catálogo Responsivo</li>
+                <li>✓ Pagamento Pix</li>
+              </ul>
+              <a href={whatsappLink} target="_blank" className="btn btn-outline" style={{ marginTop: '2.5rem', width: '100%' }}>Começar</a>
+            </div>
+            <div className="card animate-up" style={{ borderTop: '4px solid var(--accent)', background: 'rgba(255,255,255,0.02)' }}>
+              <span className="mono-text">PLANO GOLD</span>
+              <h4 style={{ fontSize: '2.5rem', margin: '1.5rem 0' }}>R$ 249,90<span style={{ fontSize: '1rem', opacity: 0.5 }}>/mês</span></h4>
+              <ul style={{ listStyle: 'none', opacity: 0.8, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <li>✓ Até 200 produtos</li>
+                <li>✓ 500 pedidos /mês</li>
+                <li>✓ Vitrine de Produtos</li>
+                <li>✓ Cupons e Combos</li>
+                <li>✓ Gestão de Clientes</li>
+              </ul>
+              <a href={whatsappLink} target="_blank" className="btn btn-primary" style={{ marginTop: '2.5rem', width: '100%' }}>Mais Popular</a>
+            </div>
+            <div className="card animate-up" style={{ borderTop: '4px solid #E5E4E2' }}>
+              <span className="mono-text" style={{ color: '#E5E4E2' }}>PLANO PLATINUM</span>
+              <h4 style={{ fontSize: '2.5rem', margin: '1.5rem 0' }}>R$ 399,90<span style={{ fontSize: '1rem', opacity: 0.5 }}>/mês</span></h4>
+              <ul style={{ listStyle: 'none', opacity: 0.8, fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <li>✓ Pedidos Ilimitados</li>
+                <li>✓ WhatsApp com IA</li>
+                <li>✓ API de Integração</li>
+                <li>✓ Dashboard Avançado</li>
+                <li>✓ Suporte VIP</li>
+              </ul>
+              <a href={whatsappLink} target="_blank" className="btn btn-outline" style={{ marginTop: '2.5rem', width: '100%' }}>Full Power</a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="contato" className="section" style={{ background: 'var(--bg-soft)' }}>
+      <section id="diferenciais" className="section">
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem' }}>
+            <div className="animate-up">
+              <span className="mono-text">02 / MANIFESTO</span>
+              <h2 className="drama-text" style={{ fontSize: '4rem', marginTop: '1rem' }}>Focamos no seu Lucro.</h2>
+              <p style={{ marginTop: '2rem' }}>Diferente dos marketplaces, nós não cobramos taxas por pedido. Você é dono dos seus dados e do seu faturamento.</p>
+            </div>
+            <div className="animate-up" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              {[
+                { t: "IA Avançada", d: "Atendimento que entende intenções e finaliza compras." },
+                { t: "Suporte Dedicado", d: "Time sênior focado em resolver seus desafios diários." },
+                { t: "Facilidade de Uso", d: "Configure e comece a vender em minutos, sem fricção." }
+              ].map((item, i) => (
+                <div key={i} style={{ borderLeft: '2px solid var(--accent)', paddingLeft: '2rem' }}>
+                  <h3>{item.t}</h3>
+                  <p style={{ fontSize: '0.9rem', opacity: 0.7 }}>{item.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" className="section section-alt">
         <div className="container" style={{ textAlign: 'center' }}>
-          <div className="glass-panel" style={{ padding: '80px 40px', background: '#000' }}>
-            <h2 className="drama-text" style={{ fontSize: '4rem' }}>Recupere o controle.</h2>
-            <p style={{ fontSize: '1.2rem', marginBottom: '40px' }}>Pare de ser refém das taxas abusivas e tenha seu próprio canal de vendas inteligente.</p>
-            <a href={whatsappLink} target="_blank" className="btn btn-primary" style={{ fontSize: '1.2rem', padding: '20px 80px' }}>
-              Falar no WhatsApp
+          <div className="card animate-up" style={{ background: '#0a0a0a', border: 'none', padding: '100px 40px' }}>
+            <h2 className="drama-text" style={{ fontSize: '4.5rem' }}>Pronto para o Próximo Nível?</h2>
+            <p style={{ fontSize: '1.25rem', margin: '2rem 0 4rem', opacity: 0.6 }}>Assine agora e tenha a inteligência da Panda Hub no seu delivery.</p>
+            <a href={whatsappLink} target="_blank" className="btn btn-primary" style={{ padding: '1.5rem 5rem', fontSize: '1.2rem' }}>
+              Iniciar Ativação
             </a>
           </div>
         </div>
       </section>
 
-      <footer style={{ padding: '80px 0 20px', borderTop: '1px solid var(--glass-border)' }}>
+      <footer className="section" style={{ padding: '80px 0 20px', borderTop: '1px solid var(--glass-border)' }}>
         <div className="container">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '40px' }}>
             <div>
               <div style={{ fontWeight: 800, fontSize: '1.5rem', color: '#fff' }}>PANDA HUB</div>
-              <p style={{ opacity: 0.5, maxWidth: '300px', marginTop: '1rem' }}>A ponte tecnológica definitiva para o sucesso do seu delivery.</p>
+              <p style={{ opacity: 0.4, maxWidth: '300px', marginTop: '1rem', fontSize: '0.9rem' }}>Desenvolvemos instrumentos digitais de alta performance para o setor alimentício.</p>
             </div>
-            <div style={{ fontSize: '0.8rem', fontFamily: 'var(--font-mono)' }}>
-              <div style={{ color: '#00ff00' }}>● OPERATIONAL</div>
-              <div style={{ opacity: 0.5, marginTop: '5px' }}>v4.0 // STABLE RELEASE</div>
+            <div style={{ textAlign: 'right' }}>
+              <div style={{ color: '#00ff00', fontSize: '0.75rem', fontFamily: 'var(--font-mono)' }}>● SYSTEM OPERATIONAL</div>
+              <div style={{ opacity: 0.4, marginTop: '10px', fontSize: '0.75rem', fontFamily: 'var(--font-mono)' }}>BUILD v4.2 // MAR 2026</div>
             </div>
           </div>
-          <div style={{ marginTop: '60px', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.05)', textAlign: 'center', fontSize: '0.75rem', opacity: 0.3 }}>
-            Photos by <a href="https://unsplash.com" target="_blank" style={{ textDecoration: 'underline' }}>Unsplash</a> | 
+          <div style={{ marginTop: '80px', paddingTop: '30px', borderTop: '1px solid rgba(255,255,255,0.05)', textAlign: 'center', fontSize: '0.75rem', opacity: 0.3 }}>
             Created by <a href="https://rapisite.com.br" target="_blank" style={{ textDecoration: 'underline' }}>RapiSite</a>
           </div>
         </div>
       </footer>
+
+      <style jsx global>{`
+        .animate-up { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .animate-up.active { opacity: 1; transform: translateY(0); }
+      `}</style>
     </main>
   );
 }

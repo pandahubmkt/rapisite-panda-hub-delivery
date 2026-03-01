@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Panda Hub Delivery | Inteligência em Atendimento",
-  description: "A tecnologia definitiva para restaurantes. Cardápio digital integrado com IA de atendimento via WhatsApp.",
+  title: "Panda Hub Delivery | Inteligência Corporativa para Restaurantes",
+  description: "Tecnologia de elite para o ramo alimentício. Cardápio digital com IA de atendimento via WhatsApp e gestão completa.",
 };
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
       </head>
       <body>
         <nav className="navbar">
-          <div className="logo" style={{fontWeight: 800, fontSize: '1.2rem'}}>PANDA HUB</div>
+          <div className="logo" style={{fontWeight: 800, color: 'white'}}>PANDA HUB</div>
           <ul className="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="/sobre">Sobre</a></li>
@@ -29,7 +29,7 @@ export default function RootLayout({
           </a>
         </nav>
         {children}
-        <a href="https://wa.me/5511999999999?text=Olá, vim pelo site e quero saber mais sobre o Panda Hub Delivery!" className="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/5511999999999?text=Olá, vim pelo site corporativo!" className="whatsapp-float" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-whatsapp"></i>
         </a>
       </body>
