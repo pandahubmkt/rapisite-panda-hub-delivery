@@ -1,5 +1,5 @@
 export default function Home() {
-  const whatsappLink = "https://wa.me/5532998214116?text=Olá Filipe, quero saber mais sobre o Panda Hub Delivery!";
+  const whatsappLink = "https://wa.me/5511999999999?text=Olá Filipe, quero saber mais sobre o Panda Hub Delivery!";
 
   return (
     <main>
@@ -36,15 +36,15 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
             <div className="glass-panel">
               <h3 style={{ color: 'var(--primary)' }}>Cardápio Digital</h3>
-              <p style={{ marginTop: '1rem' }}>Interface premium ultra-rápida. Seus pratos brilham e a compra acontece em segundos.</p>
+              <p style={{ marginTop: '1rem' }}>Interface premium ultra-rápida. Planos Prata, Gold e Platinum para cada estágio do seu negócio.</p>
             </div>
             <div className="glass-panel">
               <h3 style={{ color: 'var(--primary)' }}>IA no WhatsApp</h3>
               <p style={{ marginTop: '1rem' }}>Um atendente virtual que nunca dorme, tira dúvidas e fecha pedidos sem intervenção humana.</p>
             </div>
             <div className="glass-panel">
-              <h3 style={{ color: 'var(--primary)' }}>ERP & Gestão</h3>
-              <p style={{ marginTop: '1rem' }}>Controle total de faturamento, estoque e CRM para fidelizar seus clientes e aumentar o LTV.</p>
+              <h3 style={{ color: 'var(--primary)' }}>Ecossistema Completo</h3>
+              <p style={{ marginTop: '1rem' }}>ERP, Pagamentos Integrados, CRM & LTV e até Programa de Afiliados para escalar seu alcance.</p>
             </div>
           </div>
         </div>
@@ -54,10 +54,10 @@ export default function Home() {
         <div className="container" style={{ textAlign: 'center' }}>
           <p style={{ opacity: 0.5, marginBottom: '2rem' }}>A maioria do setor foca em: apenas listar produtos.</p>
           <h2 className="drama-text" style={{ fontSize: '5rem' }}>
-            Nós focamos em: <span style={{ color: 'var(--primary)' }}>Lucro e Liberdade.</span>
+            Nós focamos em: <span style={{ color: 'var(--primary)' }}>Inteligência e Facilidade.</span>
           </h2>
           <p style={{ marginTop: '3rem', maxWidth: '800px', margin: '3rem auto 0', fontSize: '1.1rem' }}>
-            Nossa tecnologia foi criada por quem vive a dor do restaurante. Chega de pagar comissões abusivas e perder tempo com atendimento manual.
+            Nossa plataforma otimiza o atendimento, facilita a gestão e oferece o melhor design de cardápio do mercado. Tudo para você vender mais.
           </p>
         </div>
       </section>
@@ -66,9 +66,9 @@ export default function Home() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px' }}>
             {[
-              { t: "IA Avançada", d: "Atendimento fluido que entende gírias e variações de pedidos." },
-              { t: "Suporte Real", d: "Time de especialistas prontos para otimizar sua operação." },
-              { t: "Fácil de Usar", d: "Configure seu cardápio em minutos e comece a vender no mesmo dia." }
+              { t: "IA Avançada", d: "Atendimento fluido que entende o contexto e finaliza a compra sozinho." },
+              { t: "Suporte Premium", d: "Time de especialistas prontos para garantir que sua operação nunca pare." },
+              { t: "Design que Vende", d: "Cardápios pensados para aumentar o ticket médio através da experiência visual." }
             ].map((item, i) => (
               <div key={i} style={{ borderLeft: '2px solid var(--primary)', paddingLeft: '30px' }}>
                 <h3>{item.t}</h3>
@@ -82,10 +82,10 @@ export default function Home() {
       <section id="contato" className="section" style={{ background: 'var(--bg-soft)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <div className="glass-panel" style={{ padding: '80px 40px', background: '#000' }}>
-            <h2 className="drama-text" style={{ fontSize: '4rem' }}>Escale seu Delivery.</h2>
-            <p style={{ fontSize: '1.2rem', marginBottom: '40px' }}>Junte-se à revolução da inteligência artificial e recupere o controle da sua marca.</p>
+            <h2 className="drama-text" style={{ fontSize: '4rem' }}>Recupere o controle.</h2>
+            <p style={{ fontSize: '1.2rem', marginBottom: '40px' }}>Pare de ser refém das taxas abusivas e tenha seu próprio canal de vendas inteligente.</p>
             <a href={whatsappLink} target="_blank" className="btn btn-primary" style={{ fontSize: '1.2rem', padding: '20px 80px' }}>
-              Chamar no WhatsApp
+              Falar no WhatsApp
             </a>
           </div>
         </div>
@@ -96,16 +96,16 @@ export default function Home() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '40px' }}>
             <div>
               <div style={{ fontWeight: 800, fontSize: '1.5rem', color: '#fff' }}>PANDA HUB</div>
-              <p style={{ opacity: 0.5, maxWidth: '300px', marginTop: '1rem' }}>O elo definitivo entre tecnologia de IA e resultados exponenciais para restaurantes.</p>
+              <p style={{ opacity: 0.5, maxWidth: '300px', marginTop: '1rem' }}>A ponte tecnológica definitiva para o sucesso do seu delivery.</p>
             </div>
             <div style={{ fontSize: '0.8rem', fontFamily: 'var(--font-mono)' }}>
               <div style={{ color: '#00ff00' }}>● OPERATIONAL</div>
-              <div style={{ opacity: 0.5, marginTop: '5px' }}>v3.4 // CLOUD DEPLOY</div>
+              <div style={{ opacity: 0.5, marginTop: '5px' }}>v4.0 // STABLE RELEASE</div>
             </div>
           </div>
           <div style={{ marginTop: '60px', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.05)', textAlign: 'center', fontSize: '0.75rem', opacity: 0.3 }}>
-            Photos by <a href="https://unsplash.com" target="_blank" style={{ color: '#fff' }}>Unsplash</a> | 
-            Created by <a href="https://rapisite.com.br" target="_blank" style={{ color: '#fff' }}>RapiSite</a>
+            Photos by <a href="https://unsplash.com" target="_blank" style={{ textDecoration: 'underline' }}>Unsplash</a> | 
+            Created by <a href="https://rapisite.com.br" target="_blank" style={{ textDecoration: 'underline' }}>RapiSite</a>
           </div>
         </div>
       </footer>

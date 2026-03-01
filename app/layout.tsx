@@ -24,12 +24,12 @@ export default function RootLayout({
             <li><a href="/sobre">Sobre</a></li>
             <li><a href="/contato">Contato</a></li>
           </ul>
-          <a href="https://wa.me/5532998214116" target="_blank" className="btn btn-primary" style={{ padding: '0.8rem 1.5rem', fontSize: '0.75rem' }}>
+          <a href="https://wa.me/5511999999999" target="_blank" className="btn btn-primary" style={{ padding: '0.8rem 1.5rem', fontSize: '0.75rem' }}>
             Assinar Agora
           </a>
         </nav>
         {children}
-        <a href="https://wa.me/5532998214116?text=Olá, vim pelo site e quero saber mais sobre o Panda Hub Delivery!" className="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/5511999999999?text=Olá, vim pelo site e quero saber mais sobre o Panda Hub Delivery!" className="whatsapp-float" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-whatsapp"></i>
         </a>
       </body>

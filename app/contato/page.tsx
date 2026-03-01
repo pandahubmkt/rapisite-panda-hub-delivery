@@ -12,8 +12,8 @@ export default function Contato() {
               
               <div style={{ marginTop: "60px" }}>
                 <div style={{ marginBottom: "30px" }}>
-                  <span style={{ display: "block", fontSize: "0.8rem", fontWeight: "bold", color: "var(--primary)", textTransform: "uppercase" }}>Suporte & Comercial</span>
-                  <a href="https://wa.me/5532998214116" target="_blank" style={{ fontSize: "1.8rem", fontWeight: "800" }}>32 99821-4116</a>
+                  <span style={{ display: "block", fontSize: "0.8rem", fontWeight: "bold", color: "var(--primary)", textTransform: "uppercase" }}>WhatsApp</span>
+                  <a href="https://wa.me/5511999999999" target="_blank" style={{ fontSize: "1.8rem", fontWeight: "800" }}>11 99999-9999</a>
                 </div>
                 <div>
                   <span style={{ display: "block", fontSize: "0.8rem", fontWeight: "bold", color: "var(--primary)", textTransform: "uppercase" }}>Região</span>
@@ -33,7 +33,7 @@ export default function Contato() {
                   <input type="tel" required style={{ width: "100%", padding: "1.2rem", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "white" }} />
                 </div>
                 <div style={{ marginBottom: "35px" }}>
-                  <label style={{ display: "block", fontSize: "0.75rem", fontWeight: "bold", marginBottom: "8px", opacity: 0.7 }}>TIPO DE COZINHA</label>
+                  <label style={{ display: "block", fontSize: "0.75rem", fontWeight: "bold", marginBottom: "8px", opacity: 0.7 }}>VOLUME DE PEDIDOS / MÊS</label>
                   <input type="text" required style={{ width: "100%", padding: "1.2rem", background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "8px", color: "white" }} />
                 </div>
                 <button type="submit" className="btn btn-primary" style={{ width: "100%" }}>Solicitar Demonstração</button>
